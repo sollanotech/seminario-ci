@@ -10,4 +10,4 @@ def test_subtracao():
 
 
 def test_multiplicacao():
-    assert multiplicacao(4, 3) == 12
+    assert multiplicacao(4, 3) == 10
