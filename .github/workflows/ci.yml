@@ -1,0 +1,26 @@
+name: Python CI
+
+on:
+  push:
+    branches: [ "main", "principal" ]
+  pull_request:
+    branches: [ "main", "principal" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar o Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Instalar o pytest
+        run: pip install pytest
+
+      - name: Executar os testes
+        run: pytest
